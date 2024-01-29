@@ -1,0 +1,9 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+build:
+  artifacts:
+  - image: europe-docker.pkg.dev/shikanime-studio-labs/experimental/agent-poc
+    buildpacks: {}
+  googleCloudBuild:
+    projectId: shikanime-studio-labs
+    region: global
