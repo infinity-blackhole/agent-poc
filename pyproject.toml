@@ -3,17 +3,32 @@ name = "agent-poc"
 version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "William Phetsinorath", email = "william.phetsinorath@shikanime.studio"},
+    { name = "William Phetsinorath", email = "william.phetsinorath@shikanime.studio" },
 ]
-dependencies = []
-requires-python = ">=3.10"
+dependencies = [
+    "langchain>=0.1.4",
+    "chainlit>=1.0.200",
+    "langchain-community>=0.0.16",
+    "langchain-google-vertexai>=0.0.3",
+    "numexpr>=2.9.0",
+    "firebase-admin>=6.4.0",
+    "langchainhub>=0.1.14",
+]
+requires-python = ">=3.10,<3.12"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
-
 [tool.pdm]
 distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.1.14",
+]
+[tool.ruff]
+select = ["ALL"]
